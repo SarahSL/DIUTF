@@ -15,20 +15,20 @@ public class StartActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start);
+        setContentView(R.layout.activity_main);
 
-        this.findViewById(R.id.search).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(StartActivity.this, SearchActivity.class));
-            }
-        });
-
-        this.findViewById(R.id.cameraButton).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(StartActivity.this, "Camera opened", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        this.findViewById(R.id.search).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(StartActivity.this, SearchActivity.class));
+//            }
+//        });
+//
+//        this.findViewById(R.id.cameraButton).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(StartActivity.this, "Camera opened", Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 }

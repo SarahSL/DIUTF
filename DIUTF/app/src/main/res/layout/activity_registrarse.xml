@@ -5,9 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <RelativeLayout
-        android:layout_width="374dp"
-        android:layout_height="491dp"
+        android:layout_width="356dp"
+        android:layout_height="480dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -16,39 +17,42 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView6"
+            android:id="@+id/imagen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="42dp"
-            app:srcCompat="@mipmap/ic_launcher" />
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/errorMensaje"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="23dp"
+            android:background="@mipmap/perfil" />
 
         <Button
             android:id="@+id/cambiarImagen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/imageView6"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="11dp"
+            android:layout_below="@+id/errorMensaje"
+            android:layout_marginStart="37dp"
+            android:layout_marginTop="48dp"
+            android:layout_toEndOf="@+id/imagen"
+            android:background="@color/colorPrimaryDark"
+            android:backgroundTint="@color/colorPrimary"
             android:text="Seleccionar..."
-            android:textSize="10sp" />
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/correo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/correoTexto"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/cambiarImagen"
-            android:layout_marginTop="22dp"
             android:text="Correo electrónico: " />
 
         <EditText
             android:id="@+id/correoTexto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/nombreUser"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/correo"
             android:ems="10"
             android:inputType="textEmailAddress"
             android:textSize="14sp" />
@@ -57,16 +61,16 @@
             android:id="@+id/nombreUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/nameText"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/correoTexto"
             android:text="Nombre de usuario:" />
 
         <EditText
             android:id="@+id/nameText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/contraseña"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/nombreUser"
             android:ems="10"
             android:inputType="textPersonName"
             android:textSize="14sp" />
@@ -75,44 +79,60 @@
             android:id="@+id/contraseña"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/contraseñaTexto"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/nameText"
             android:text="Contraseña:" />
 
         <EditText
             android:id="@+id/contraseñaTexto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/confirm"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/contraseña"
             android:ems="10"
             android:inputType="textPassword"
             android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/playa"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/contraseñaTexto"
-            android:text="Playas Favoritas:" />
-
         <Button
             android:id="@+id/register"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:text="Registrarse" />
+            android:background="@color/colorPrimaryDark"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Registrarse"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tconfirm"
+            android:layout_alignParentStart="true"
+            android:text="Confirmar contraseña:"
+            tools:layout_editor_absoluteX="180dp"
+            tools:layout_editor_absoluteY="378dp" />
 
         <EditText
-            android:id="@+id/playas"
+            android:id="@+id/tconfirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/register"
+            android:layout_alignParentStart="true"
+            android:ems="10"
+            android:inputType="textPassword" />
+
+        <TextView
+            android:id="@+id/errorMensaje"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/playa"
-            android:ems="10"
-            android:inputType="textMultiLine" />
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:text="Por favor, rellene todos los campos."
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:visibility="invisible" />
 
     </RelativeLayout>
 

@@ -56,7 +56,7 @@ public class SearchActivity extends AppCompatActivity{
         this.findViewById(R.id.cameraButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(SearchActivity.this, "Camera opened", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(SearchActivity.this,CameraActivity.class));
             }
         });
         this.findViewById(R.id.profileButton).setOnClickListener(new View.OnClickListener() {

@@ -24,8 +24,10 @@ import java.util.Random;
  */
 
 public class StartActivity extends AppCompatActivity{
-    private  String[] usernames = new String[]{"Benjamin","Cynthia","Jorge","Tomás","Jesé","Jaime","Antonio","Judith","Benito","Jessica"};
-    private String[] beaches = new String[]{"Las Canteras", "El Burrero", "Las Burras", "Playa del Cochino", "Playa del Inglés", "Ojos de Garza", "Playa de Cabrón", "Gui-gui", "Playa del hombre", "Playa de atrás", "La Garita"};
+    public  static String[] usernames = new String[]{"Benjamin","Cynthia","Jorge","Tomás","Jesé","Jaime","Antonio","Judith","Benito","Jessica"};
+    public static String[] beaches = new String[]{"Las Canteras, Las Palmas de Gran Canaria", "El Burrero, Las Palmas de Gran Canaria", "Las Burras, Las Palmas de Gran Canaria",
+            "Playa del Cochino, Las Palmas de Gran Canaria", "Playa del Inglés, Las Palmas de Gran Canaria", "Ojos de Garza, Las Palmas de Gran Canaria", "Playa de Cabrón, Las Palmas de Gran Canaria",
+            "Gui-gui, Las Palmas de Gran Canaria", "Playa del hombre, Las Palmas de Gran Canaria", "Playa de atrás, Las Palmas de Gran Canaria", "La Garita, Las Palmas de Gran Canaria"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,10 +65,16 @@ public class StartActivity extends AppCompatActivity{
                 Toast.makeText(StartActivity.this, "Camera opened", Toast.LENGTH_SHORT).show();
             }
         });
+        this.findViewById(R.id.profileButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(StartActivity.this,EditActivity.class));
+            }
+        });
         //
 
         ArrayList<Beach> randomBeaches = new ArrayList<>();
-        for (String beach : usernames) {
+        for (String ignored : usernames) {
             if (new Random().nextBoolean()) {
                 Beach randomBeach = new Beach(usernames[new Random().nextInt(usernames.length)]);
                 randomBeach.setPhoto(ContextCompat.getDrawable(this, R.drawable.playagc));

@@ -65,7 +65,7 @@
             android:layout_alignParentStart="true"
             android:ems="10"
             android:inputType="textEmailAddress"
-            android:text="manolo@ulpgc.es"
+            android:text="cynthia@ulpgc.es"
             android:textSize="14sp" />
 
         <TextView
@@ -85,7 +85,7 @@
             android:layout_alignParentStart="true"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="ManoloZ"
+            android:text="Cynthia"
             android:textSize="14sp" />
 
         <TextView
@@ -106,7 +106,7 @@
             android:layout_marginBottom="20dp"
             android:ems="10"
             android:inputType="textPassword"
-            android:text="prueba"
+            android:text="root"
             android:textSize="14sp" />
 
         <Button

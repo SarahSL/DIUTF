@@ -45,6 +45,12 @@ public class ProfileActivity extends AppCompatActivity {
                 Toast.makeText(ProfileActivity.this, "Camera opened", Toast.LENGTH_SHORT).show();
             }
         });
+        this.findViewById(R.id.profileButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ProfileActivity.this,EditActivity.class));
+            }
+        });
 
     }
 }

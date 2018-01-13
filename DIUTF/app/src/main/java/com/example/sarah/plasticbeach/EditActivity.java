@@ -21,9 +21,6 @@ public class EditActivity extends Activity{
     EditText usuario;
     EditText contraseña;
 
-    Button selec;
-    Button aplicar;
-
     TextView error;
     ImageView foto;
     Uri imageUri;
@@ -37,21 +34,19 @@ public class EditActivity extends Activity{
         correo = findViewById(R.id.correoTexto);
         usuario = findViewById(R.id.nameText);
         contraseña = findViewById(R.id.contraseñaTexto);
-        selec= findViewById(R.id.cambiarImagen);
-        aplicar= findViewById(R.id.cambios);
         error= findViewById(R.id.errorEdit);
         foto= findViewById(R.id.imagen);
 
-        aplicar.setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.cambios).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 if(correo.getText().toString().length()>0 && contraseña.getText().toString().length()>0 && usuario.getText().toString().length()>0){
-                    Toast toast1 =
-                            Toast.makeText(getApplicationContext(),
-                                    "Los cambios se han aplicado correctamente.", Toast.LENGTH_SHORT);
+                    Toast.makeText(getApplicationContext(),
+                                    "Los cambios se han aplicado correctamente.", Toast.LENGTH_SHORT).show();
 
-                    toast1.show();
+                     startActivity(new Intent(getApplicationContext(),StartActivity.class));
+
                 }else {
                     error.setVisibility(View.VISIBLE);
                     Toast toast1 =
@@ -63,12 +58,12 @@ public class EditActivity extends Activity{
             }
         });
 
-        selec.setOnClickListener(new View.OnClickListener(){
+        findViewById(R.id.cambiarImagen).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 Intent gallery = new Intent(Intent.ACTION_GET_CONTENT, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 gallery.setType("image/");
-                startActivityForResult(gallery.createChooser(gallery, "Seleccione una aplicación"), 10);
+                startActivityForResult(gallery.createChooser(gallery, "Seleccione una imagen"), 10);
             }
         });
     }

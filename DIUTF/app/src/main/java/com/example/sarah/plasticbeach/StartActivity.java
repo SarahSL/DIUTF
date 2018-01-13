@@ -17,7 +17,7 @@ public class StartActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
-
+//Commun in all class inside the app
         this.findViewById(R.id.logout).setOnClickListener(new View.OnClickListener() {
           @Override
             public void onClick(View view) {
@@ -25,18 +25,31 @@ public class StartActivity extends AppCompatActivity{
                 startActivity(intent);
             }
         });
-//        this.findViewById(R.id.search).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(StartActivity.this, SearchActivity.class));
-//            }
-//        });
-//
-//        this.findViewById(R.id.cameraButton).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Toast.makeText(StartActivity.this, "Camera opened", Toast.LENGTH_SHORT).show();
-//            }
-//        });
+        this.findViewById(R.id.search).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(StartActivity.this, SearchActivity.class));
+            }
+        });
+        this.findViewById(R.id.home).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              startActivity(new Intent(StartActivity.this,StartActivity.class));
+            }
+        });
+        this.findViewById(R.id.perfil).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(StartActivity.this,ProfileActivity.class));
+            }
+        });
+
+        this.findViewById(R.id.cameraButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(StartActivity.this, "Camera opened", Toast.LENGTH_SHORT).show();
+            }
+        });
+        //
     }
 }

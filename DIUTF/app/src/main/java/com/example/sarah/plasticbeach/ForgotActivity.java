@@ -1,6 +1,7 @@
 package com.example.sarah.plasticbeach;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,8 +18,6 @@ public class ForgotActivity extends Activity {
     EditText correo;
     EditText password;
     EditText confirmPass;
-
-    Button cambio;
     TextView mensaje;
     TextView error2;
 
@@ -29,17 +28,17 @@ public class ForgotActivity extends Activity {
         correo = findViewById(R.id.correoChange);
         password = findViewById(R.id.tPass1);
         confirmPass = findViewById(R.id.tPass2);
-        cambio = findViewById(R.id.establecer);
         mensaje = findViewById(R.id.mensaje);
         error2 = findViewById(R.id.error2);
 
-        cambio.setOnClickListener(new View.OnClickListener() {
+        this.findViewById(R.id.establecer).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 if(correo.getText().toString().length()>0 && password.getText().toString().length()>0 && confirmPass.getText().toString().length()>0 && password.getText().toString().equals(confirmPass.getText().toString())){
                     error2.setVisibility(View.INVISIBLE);
                     mensaje.setVisibility(View.VISIBLE);
+
                 }else {
                     mensaje.setVisibility(View.INVISIBLE);
                     error2.setVisibility(View.VISIBLE);
@@ -49,6 +48,7 @@ public class ForgotActivity extends Activity {
 
                     toast1.show();
                 }
+
             }
         });
     }

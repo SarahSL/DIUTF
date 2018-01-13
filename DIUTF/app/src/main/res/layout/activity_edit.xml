@@ -7,47 +7,62 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="352dp"
+        android:layout_height="482dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView6"
+            android:id="@+id/imagen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="42dp"
-            app:srcCompat="@mipmap/ic_launcher" />
+            android:layout_marginStart="33dp"
+            android:background="@mipmap/surf" />
 
         <Button
             android:id="@+id/cambiarImagen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/imageView6"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="11dp"
+            android:layout_alignBottom="@+id/imagen"
+            android:layout_marginBottom="51dp"
+            android:layout_marginStart="31dp"
+            android:layout_toEndOf="@+id/imagen"
+            android:background="@color/colorPrimaryDark"
+            android:backgroundTint="@color/colorPrimary"
             android:text="Cambiar..."
-            android:textSize="10sp" />
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/errorEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/cambiarImagen"
+            android:layout_below="@+id/imagen"
+            android:layout_marginEnd="21dp"
+            android:layout_marginTop="13dp"
+            android:text="Por favor rellene todos los campos"
+            android:textColor="@color/colorAccent"
+            android:visibility="invisible" />
 
         <TextView
             android:id="@+id/correo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/correoTexto"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/cambiarImagen"
-            android:layout_marginTop="22dp"
-            android:text="Correo electrónico: " />
+            android:text="Correo electrónico: "
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/correoTexto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/nombreUser"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/correo"
             android:ems="10"
             android:inputType="textEmailAddress"
             android:text="manolo@ulpgc.es"
@@ -57,16 +72,17 @@
             android:id="@+id/nombreUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/nameText"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/correoTexto"
-            android:text="Nombre de usuario:" />
+            android:text="Nombre de usuario:"
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/nameText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/contraseña"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/nombreUser"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="ManoloZ"
@@ -76,28 +92,22 @@
             android:id="@+id/contraseña"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/contraseñaTexto"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/nameText"
-            android:text="Contraseña:" />
+            android:text="Contraseña:"
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/contraseñaTexto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/cambios"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/contraseña"
+            android:layout_marginBottom="20dp"
             android:ems="10"
             android:inputType="textPassword"
-            android:text="1234"
+            android:text="prueba"
             android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/playa"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/contraseñaTexto"
-            android:text="Playas Favoritas:" />
 
         <Button
             android:id="@+id/cambios"
@@ -105,17 +115,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
+            android:layout_marginBottom="17dp"
+            android:background="@color/colorPrimaryDark"
+            android:backgroundTint="@color/colorPrimary"
             android:text="Aplicar Cambios" />
-
-        <EditText
-            android:id="@+id/playas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/playa"
-            android:ems="10"
-            android:inputType="textMultiLine"
-            android:text=" Las Canteras" />
 
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

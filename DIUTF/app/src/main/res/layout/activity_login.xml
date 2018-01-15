@@ -91,7 +91,7 @@
             android:id="@+id/error"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="The password or  username is incorrect.Tty again."
+            android:text="La contraseña o el usuario es incorrecto. Inténtelo de nuevo"
             android:textColor="@color/colorAccent"
             android:visibility="invisible" />
 

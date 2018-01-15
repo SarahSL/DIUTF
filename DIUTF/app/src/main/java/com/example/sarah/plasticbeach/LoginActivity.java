@@ -41,7 +41,7 @@ public class LoginActivity extends Activity {
                 }else {
 
                     error.setVisibility(View.VISIBLE);
-                    Toast toast1 = Toast.makeText(getApplicationContext(),"Try again", Toast.LENGTH_SHORT);
+                    Toast toast1 = Toast.makeText(getApplicationContext(),"Inténtalo de nuevo", Toast.LENGTH_SHORT);
                     toast1.show();
                 }
             }

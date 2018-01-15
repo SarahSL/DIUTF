@@ -20,7 +20,10 @@ import android.widget.Toast;
 import com.example.sarah.plasticbeach.adapters.BeachAdapter;
 import com.example.sarah.plasticbeach.models.Beach;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Random;
 
 /**
@@ -99,7 +102,7 @@ public class SearchActivity extends AppCompatActivity{
                 if(keyEvent.getAction() == KeyEvent.ACTION_DOWN){
                     switch (KeyCode){
                         case KeyEvent.KEYCODE_ENTER:
-                            if (searchText.getText().toString().trim().equals("Las Palmas de Gran Canaria") ){
+                            if (searchText.getText().toString().trim().equals("Las Palmas de Gran Canaria") || searchText.getText().toString().trim().contains("29/04/17") ){
                                 ListView listOfBeach = findViewById(R.id.beachSearch);
                                 ArrayList<Beach> randomBeaches = new ArrayList<>();
                                 for (String ignored : StartActivity.usernames) {
@@ -107,6 +110,14 @@ public class SearchActivity extends AppCompatActivity{
                                         Beach randomBeach = new Beach( StartActivity.usernames[new Random().nextInt( StartActivity.usernames.length)]);
                                         randomBeach.setPhoto(ContextCompat.getDrawable(getApplicationContext(), R.drawable.playagc));
                                         randomBeach.setDescription( StartActivity.beaches[new Random().nextInt( StartActivity.beaches.length)]);
+                                        SimpleDateFormat sdf2 = new SimpleDateFormat("dd-MM-yyyy");
+                                        Date date = null;
+                                        try {
+                                            date = sdf2.parse("29-04-2017");
+                                        } catch (ParseException e) {
+                                            e.printStackTrace();
+                                        }
+                                        randomBeach.setDate(date);
                                         randomBeaches.add(randomBeach);
                                     }
                                 }

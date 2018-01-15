@@ -59,7 +59,7 @@ public class ProfileActivity extends AppCompatActivity {
                         Intent gallery = new Intent(Intent.ACTION_GET_CONTENT, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                         gallery.setType("image/");
                         startActivityForResult(gallery.createChooser(gallery, "Seleccione una aplicación"), 10);
-                        
+
                     }
                 });
                 builder.setNegativeButton("Camara", new DialogInterface.OnClickListener() {
